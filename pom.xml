@@ -5,23 +5,48 @@
 	<artifactId>PukeBot</artifactId>
 	<version>1.0</version>
 	<name>PukeBot</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<includes>
+									<include>net.dv8tion:JDA</include>
+								</includes>
+							</artifactSet>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.volmit.pukebot.PukeBot</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 	<repositories>
 		<repository>
-			<id>javacord-repo</id>
-			<url>http://repo.bastian-oppermann.de</url>
+			<id>jcenter</id>
+			<name>jcenter-bintray</name>
+			<url>http://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
-			<groupId>de.btobastian.javacord</groupId>
-			<artifactId>javacord</artifactId>
-			<version>2.0.15</version>
-			<classifier>shaded</classifier>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.1.3</version>
+			<groupId>net.dv8tion</groupId>
+			<artifactId>JDA</artifactId>
+			<version>3.2.0_246</version>
 		</dependency>
 	</dependencies>
 </project>
