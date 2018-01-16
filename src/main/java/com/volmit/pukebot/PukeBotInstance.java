@@ -53,7 +53,7 @@ public class PukeBotInstance implements EventListener
 				{
 					Color color = Color.getHSBColor(h, s, b);
 
-					h += 0.016;
+					h += 0.009;
 
 					if(h > 1f)
 					{
@@ -67,7 +67,7 @@ public class PukeBotInstance implements EventListener
 
 					try
 					{
-						Thread.sleep(200);
+						Thread.sleep(50);
 					}
 
 					catch(InterruptedException e)
@@ -87,7 +87,7 @@ public class PukeBotInstance implements EventListener
 
 						e.getTextChannel().getIdLong()
 
-				).get(e.getMessageIdLong());
+						).get(e.getMessageIdLong());
 
 		if(content != null)
 		{
@@ -233,7 +233,7 @@ public class PukeBotInstance implements EventListener
 
 			String name = "discussion-" + UUID.randomUUID().toString().split("-")[2];
 			e.getChannel().sendMessage("Created Channel **#" + name + "**").complete();
-			final TextChannel c = (TextChannel) e.getGuild().getController().createTextChannel(name).complete();
+			final TextChannel c = (TextChannel) e.getGuild().getController().createTextChannel(name).override;
 			c.getManager().setTopic("Will close in t:" + mt).complete();
 
 			new Thread(new Runnable()
@@ -284,7 +284,7 @@ public class PukeBotInstance implements EventListener
 								}
 							}
 
-							Thread.sleep(500);
+							Thread.sleep(1000);
 						}
 					}
 
