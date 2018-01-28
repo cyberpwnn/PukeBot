@@ -2,13 +2,13 @@ package com.volmit.pukebot;
 
 public class PukeBot
 {
-	private static PukeBotInstance bot;
+	private static Apparatus bot;
 	
 	public static void main(String[] puke)
 	{
 		try
 		{
-			bot = new PukeBotInstance(puke);
+			bot = new Apparatus(puke);
 		}
 		
 		catch(Exception e)

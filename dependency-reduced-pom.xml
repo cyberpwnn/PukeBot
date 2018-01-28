@@ -17,11 +17,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <artifactSet>
-                <includes>
-                  <include>net.dv8tion:JDA</include>
-                </includes>
-              </artifactSet>
+              <artifactSet />
               <transformers>
                 <transformer>
                   <mainClass>com.volmit.pukebot.PukeBot</mainClass>

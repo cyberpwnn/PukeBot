@@ -19,9 +19,6 @@
 						</goals>
 						<configuration>
 							<artifactSet>
-								<includes>
-									<include>net.dv8tion:JDA</include>
-								</includes>
 							</artifactSet>
 							<transformers>
 								<transformer
